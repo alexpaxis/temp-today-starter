@@ -1,14 +1,22 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import Header from "./components/Header";
 
 import "../global.css";
+import WeatherDisplay from "./components/WeatherDisplay";
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Welcome to Temp Today!</Text>
+
+    <SafeAreaView style={{flex: 1}}>
+      <Header title="Temperature Today!!" />
+      <View style={styles.container}>
       <StatusBar style="auto" />
+      <WeatherDisplay temperature={25} condition="Sunny" />
     </View>
+    </SafeAreaView>
+
   );
 }
 
@@ -16,7 +24,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
+    alignItems: "center"
+  }
 });
