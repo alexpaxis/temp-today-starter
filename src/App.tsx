@@ -8,18 +8,18 @@ import StyledButton from "./components/StyledButton";
 import AdditionalInfo from "./components/AdditionalInfo";
 
 export default function App() {
+  
   return (
-
     <SafeAreaView style={{flex: 1}}>
       <Header title="Temperature Today!!" />
       <View style={styles.container}>
       <StatusBar style="auto" />
       <WeatherDisplay temperature={25} condition="Sunny" />
       <AdditionalInfo windSpeed={10} humidity={80} />
-      <StyledButton title="Refresh" onPress={() => console.log("Button Pressed")} />
-    </View>
+      {/* <StyledButton title="Refresh" onPress={() => console.log("Button Pressed")} /> */}
+      <StyledButton onPress={() => console.log("Button Pressed")}>Refresh</StyledButton>
+      </View>
     </SafeAreaView>
-
   );
 }
 
