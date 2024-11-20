@@ -14,15 +14,15 @@ const StyledContainer = styled.View`
 `;
 
 const StyledTextTemperature = styled.Text`
-  padding-top: 40;
-  color: "#333";
+  padding-top: 40px;
+  color: #333;
   font-size: 48px;
   font-weight: bold;
 `;
 
 const StyledTextCondition = styled.Text`
   font-size: 24px;
-  color: "#666";
+  color: #666;
   margin-top: 10px;
 `;
 

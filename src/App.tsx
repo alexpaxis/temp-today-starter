@@ -4,7 +4,8 @@ import Header from "./components/Header";
 
 import "../global.css";
 import WeatherDisplay from "./components/WeatherDisplay";
-
+import StyledButton from "./components/StyledButton";
+import AdditionalInfo from "./components/AdditionalInfo";
 
 export default function App() {
   return (
@@ -14,6 +15,8 @@ export default function App() {
       <View style={styles.container}>
       <StatusBar style="auto" />
       <WeatherDisplay temperature={25} condition="Sunny" />
+      <AdditionalInfo windSpeed={10} humidity={80} />
+      <StyledButton title="Refresh" onPress={() => console.log("Button Pressed")} />
     </View>
     </SafeAreaView>
 
