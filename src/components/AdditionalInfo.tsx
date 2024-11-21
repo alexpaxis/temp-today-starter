@@ -1,7 +1,10 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text } from "react-native";
 
-
+type AdditionalInfoProps = {
+  windSpeed: number;
+  humidity: number;
+};
 
 const AdditionalInfo: React.FC<AdditionalInfoProps> = ({
   windSpeed,
