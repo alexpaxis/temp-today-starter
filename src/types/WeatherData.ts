@@ -8,7 +8,7 @@ export interface WeatherApiResponse {
     elevation: number;
     current: CurrentWeather;
     hourly_units: HourlyUnits;
-    hourly: HourlyUnits;
+    hourly: HourlyData;
     // 🚀 Add other properties such as generationtime_ms, timezone, elevation, etc.
   }
   
