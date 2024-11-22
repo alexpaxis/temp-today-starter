@@ -4,9 +4,12 @@ import { useState } from "react";
 import StyledButton from "./StyledButton";
 import { Alert, Platform, View } from "react-native";
 
+type LocationSelectorProps=
+{
+    setLocation: (city: CityName) => void;
+};
 
-
-const LocationSelector = () => 
+const LocationSelector : React.FC<LocationSelectorProps> = ({setLocation}) =>
 {
 
     const [selectedCity, setSelectedCity] = useState<CityName>("Berlin");
@@ -18,14 +21,16 @@ const LocationSelector = () =>
 
       const handlePress = () => 
       {
-            if(Platform.OS == "web" )
-            {
-                alert(`Location Set. You have selected: ${selectedCity}`);
-            }
-            else
-            {
-                Alert.alert(`Location Set. You have selected: ${selectedCity}`);
-            }
+            setLocation(selectedCity);
+            
+            // if(Platform.OS == "web" )
+            // {
+            //     alert(`Location Set. You have selected: ${selectedCity}`);
+            // }
+            // else
+            // {
+            //     Alert.alert(`Location Set. You have selected: ${selectedCity}`);
+            // }
       };
 
     return (

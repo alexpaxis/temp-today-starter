@@ -12,11 +12,12 @@ import calculateAverage from "../utils/calculateAverage";
 const MainScreen = () => {
 
     const [weatherData, setWeatherData] = useState<WeatherApiResponse | null>(null);
+    const [location, setLocation] = useState<CityName>("London");
 
     useEffect(() => {
         const fetchWeather = async () => {
         // 🌟 Get the coordinates for "Berlin" here
-        const coords = cityCoordinates["Berlin"];
+        const coords = cityCoordinates[location];
         
         // 🌟 Make an API request with axios and update state
             const response = await axios.get<WeatherApiResponse>(
@@ -38,7 +39,7 @@ const MainScreen = () => {
         };
 
         fetchWeather();
-    }, []); // 🚀 Dependency array for useEffect
+    }, [location]); // 🚀 Dependency array for useEffect
 
   // Compute average temperature from hourly weatherData
   const temperatures = weatherData?.hourly.temperature_2m;
@@ -67,7 +68,7 @@ const MainScreen = () => {
                 <Text>Could not retrieve weather data.</Text>
                 )}
 
-            <LocationSelector/>
+            <LocationSelector setLocation={setLocation}/>
         </View>
     );   
   };

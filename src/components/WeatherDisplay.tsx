@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import styled from "styled-components/native";
+import { formatMeasurement } from "../utils/FormatMeasurement";
 
 type WeatherProps = 
 {
@@ -29,7 +30,7 @@ const StyledTextCondition = styled.Text`
 const WeatherDisplay: React.FC<WeatherProps> = ({temperature,condition}) => 
 {
     return  <StyledContainer>
-                <StyledTextTemperature>{temperature}°C</StyledTextTemperature>
+                <StyledTextTemperature>{formatMeasurement(temperature)}</StyledTextTemperature>
                 <StyledTextCondition>{condition}</StyledTextCondition>
             </StyledContainer>
 }
