@@ -9,8 +9,8 @@ import useWeatherData from "../practice/useWeatherData";
 // Usage
 const MainScreen = observer(() => {
 
-    const { averageTemperature } = useWeatherData(); // 🌟 Use averageTemperature from the hook
-    const { humidity, windSpeed, setLocation } = weatherStore; // 🌟 Use data from the store
+    //const { averageTemperature } = useWeatherData(); // 🌟 Use averageTemperature from the hook
+    const { averageTemperature, humidity, windSpeed, setLocation } = weatherStore; // 🌟 Use data from the store
 
   return (
     <View style={styles.container}>
