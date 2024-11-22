@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import styled from "styled-components/native";
-import { formatMeasurement } from "../utils/FormatMeasurement";
+import { formatMeasurement } from "../utils/formatMeasurement";
 
 type WeatherProps = 
 {
